@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Practica_3</string>
-    <string name="Continuar_Button">Continuar</string>
-    <string name="Cancelar_Button">Cancelar</string>
+    <string name="Continuar_Button" translatable="false">Continuar</string>
+    <string name="Cancelar_Button" translatable="false">Cancelar</string>
 </resources>
