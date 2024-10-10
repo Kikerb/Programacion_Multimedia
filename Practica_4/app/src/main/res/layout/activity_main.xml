@@ -61,22 +61,15 @@
 
             <View
                 android:id="@+id/view26"
-                android:layout_width="wrap_content"
+                android:layout_width="208dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.67"
                 android:background="#0E29F8" />
 
             <View
-                android:id="@+id/view25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#3FE408" />
-
-            <View
                 android:id="@+id/view24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="117dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#622121" />
 
@@ -107,18 +100,12 @@
                 android:layout_weight="1"
                 android:background="#673AB7" />
 
-            <View
-                android:id="@+id/view28"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#FF9800" />
 
             <View
                 android:id="@+id/view27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.67"
                 android:background="#009688"
                 android:backgroundTint="#009688" />
         </TableRow>
