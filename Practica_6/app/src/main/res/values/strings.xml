@@ -1,0 +1,7 @@
+<resources>
+    <string name="TextoCorreo">Correo</string>
+    <string name="TextoContraseña">Contraseña</string>
+    <string name="TextoContinuar">Continuar</string>
+    <string name="TextoRecordar">Recordar</string>
+
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/black"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/TextoCorreo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+        <EditText
+            android:id="@+id/CajaTextoCorreo"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:background="#3F3F3F"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/TextoContraseña"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+        <EditText
+            android:id="@+id/CajaTextoPass"
+            android:layout_width="330dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:background="#3F3F3F"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textColor="@color/white" />
+
+        <Switch
+            android:id="@+id/recordar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/TextoRecordar"
+            android:textColor="@color/white"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Button
+            android:id="@+id/BotonContinuar"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:text="@string/TextoContinuar" />
+
+        <TextView
+            android:id="@+id/textoOculto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>
