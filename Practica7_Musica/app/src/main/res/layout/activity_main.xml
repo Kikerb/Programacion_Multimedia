@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonPlay"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="100dp"
+        app:icon="@android:drawable/ic_media_play"
+        app:iconGravity="textEnd" />
+
+    <Button
+        android:id="@+id/buttonPause"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="100dp"
+        app:icon="@android:drawable/ic_media_pause"
+        app:iconGravity="textEnd" />
+
+    <TextView
+        android:id="@+id/textOculto1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="50dp"
+        android:text="@string/Oculto1"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/textOculto2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="50dp"
+        android:text="@string/Oculto2"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:visibility="gone" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifView"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="top|center"
+        android:layout_width="202dp"
+        android:layout_height="270dp"
+        android:src="@drawable/badboys"
+        android:visibility="gone"
+        />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="top|center"
+        android:layout_width="202dp"
+        android:layout_height="270dp"
+        android:src="@drawable/badboys"
+        android:visibility="gone"
+        />
+
+
+</FrameLayout>
