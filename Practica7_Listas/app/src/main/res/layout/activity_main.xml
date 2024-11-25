@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/cajaModelo"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:textColor="@color/blue"
+        android:background="@drawable/diseno_cajas"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/Modelo"
+        android:textAlignment="center" />
+
+    <Spinner
+        android:id="@+id/cajaTipo"
+        style="@style/SpinnerTextStyle"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/diseno_cajas"
+        android:entries="@array/Tipo"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/cajaUrl"
+        android:layout_width="365dp"
+        android:layout_height="40dp"
+        android:textColor="@color/blue"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/diseno_cajas"
+        android:ems="10"
+
+        android:inputType="text"
+        android:text="@string/Imagen"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/insertar"
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:backgroundTint="@color/blue"
+        android:text="@string/Insert" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Practica5_listas</string>
+    <string name="Insert">Insertar</string>
+    <string name="Modelo">Modelo</string>
+    <string name="Tipo">Tipo</string>
+    <string name="Imagen">Url Imagen</string>
+    <string-array name="Tipo">
+        <item>Cross/Enduro</item>
+        <item>Deportiva/R</item>
+        <item>Naked</item>
+        <item>Trail/Adventure</item>
+    </string-array>
+</resources>
