@@ -6,4 +6,5 @@ import java.util.ArrayList;
 
 public interface VolleyCallBack {
     void onSuccess(Context context, ArrayList<Monumento> monumentos);
+    void onError(String mensaje);
 }

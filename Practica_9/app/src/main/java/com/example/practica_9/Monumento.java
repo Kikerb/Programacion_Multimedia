@@ -15,7 +15,9 @@ public class Monumento{
     public String imagen;
     public String video;
 
-    public Monumento(String id, String video, String imagen, String moneda, String precio, String visitable, String ciudad, String longitud, String latitud, String fecha, String descripcion, String nombre) {
+    public Monumento(String id, String  nombre, String  descripcion, String  fecha, String  latitud,
+                     String longitud, String ciudad, String visitable, String precio, String moneda,
+                     String video, String imagen) {
         this.id = id;
         this.video = video;
         this.imagen = imagen;
