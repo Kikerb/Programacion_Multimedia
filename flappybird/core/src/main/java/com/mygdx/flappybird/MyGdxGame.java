@@ -1,9 +1,8 @@
 package com.mygdx.flappybird;
 
-import static java.awt.Color.*;
-
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -11,7 +10,6 @@ import com.badlogic.gdx.math.Circle;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Rectangle;
 
-import java.awt.Color;
 import java.util.Random;
 
 public class MyGdxGame extends ApplicationAdapter {
@@ -37,6 +35,7 @@ public class MyGdxGame extends ApplicationAdapter {
     int scoringTube = 0;
     BitmapFont font;
     int maxScore = 0;
+    Preferences prefs; // Para almacenar datos
 
     @Override
     public void create() {
@@ -58,15 +57,18 @@ public class MyGdxGame extends ApplicationAdapter {
         topTubeRectangles = new Rectangle[totalTubes];
         bottomTubeRectangles = new Rectangle[totalTubes];
 
+        prefs = Gdx.app.getPreferences("FlappyBirdPrefs"); // Crear o cargar preferencias
+        maxScore = prefs.getInteger("maxScore", 0); // Cargar el puntaje maximo guardado
+
         for (int i = 0; i < totalTubes; i++) {
             tubeX[i] = Gdx.graphics.getWidth() + i * distanceBetweenTubes;
             tubeOffset[i] = (random.nextFloat() - 0.5f) * (Gdx.graphics.getHeight() - gap - 200);
             topTubeRectangles[i] = new Rectangle();
             bottomTubeRectangles[i] = new Rectangle();
         }
+
         font = new BitmapFont();
         font.getData().setScale(5);
-
     }
 
     @Override
@@ -114,22 +116,23 @@ public class MyGdxGame extends ApplicationAdapter {
                 StartGame();
             }
         }
-        //if para el contador
+
+        // Actualizar puntaje
         if (tubeX[scoringTube] < Gdx.graphics.getWidth() / 2) {
             score++;
-            if (score > maxScore) { // Actualizar el máximo puntaje
+            if (score > maxScore) {
                 maxScore = score;
+                prefs.putInteger("maxScore", maxScore); // Guardar puntaje maximo
+                prefs.flush(); // Guardar en almacenamiento
             }
             scoringTube++;
             if (scoringTube >= totalTubes) {
                 scoringTube = 0;
             }
         }
-        //pintar el contador
-        font.draw(batch, "Score: " + score, Gdx.graphics.getWidth() - 400, Gdx.graphics.getHeight() - 100);
 
-        //pintar el contador de maximo
-        font.draw(batch, "M.Score: " + maxScore, 50, Gdx.graphics.getHeight() - 100);
+        font.draw(batch, "Score: " + score, 50, Gdx.graphics.getHeight() - 270);
+        font.draw(batch, "M. Score: " + maxScore, 50, Gdx.graphics.getHeight() - 150);
 
         flapState = flapState == 0 ? 1 : 0;
         batch.draw(birds[flapState], Gdx.graphics.getWidth() / 2 - birds[flapState].getWidth() / 2, birdY);
@@ -162,17 +165,12 @@ public class MyGdxGame extends ApplicationAdapter {
     public void StartGame() {
         birdY = Gdx.graphics.getHeight() / 2 - birds[flapState].getHeight() / 2;
         velocity = 0;
-        score = 0; // Reiniciar el puntaje
-        scoringTube = 0; // Reiniciar el tubo que cuenta puntos
+        score = 0;
+        scoringTube = 0;
 
         for (int i = 0; i < totalTubes; i++) {
             tubeOffset[i] = (random.nextFloat() - 0.5f) * (Gdx.graphics.getHeight() - gap - 940);
-
-            tubeX[i] = Gdx.graphics.getWidth() / 2
-                - topTube.getWidth() / 2
-                + Gdx.graphics.getWidth()
-                + i * distanceBetweenTubes;
-
+            tubeX[i] = Gdx.graphics.getWidth() / 2 - topTube.getWidth() / 2 + Gdx.graphics.getWidth() + i * distanceBetweenTubes;
             topTubeRectangles[i] = new Rectangle();
             bottomTubeRectangles[i] = new Rectangle();
         }
